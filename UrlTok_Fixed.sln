@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrlTok_Fixed", "UrlTok_Fixed\UrlTok_Fixed.csproj", "{F40ADA0D-5A05-4336-A986-AF9E6A5301CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F40ADA0D-5A05-4336-A986-AF9E6A5301CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F40ADA0D-5A05-4336-A986-AF9E6A5301CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F40ADA0D-5A05-4336-A986-AF9E6A5301CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F40ADA0D-5A05-4336-A986-AF9E6A5301CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2B41CB79-8A9B-4179-AE61-A7FED5F232D7}
+	EndGlobalSection
+EndGlobal
