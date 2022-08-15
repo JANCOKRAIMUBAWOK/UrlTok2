@@ -1,6 +1,6 @@
 ## Quickly Convert TikTok Videos into a MP4 File!
 
-With the help of the brand UrlTok version you can easily, configurate your personal preferences, scrape three types of proxies, download a Tiktok video manually or automatically, check the newest updates on Dicord and Github.
+With the help of the brand UrlTok version you can easily, configurate your personal preferences, scrape three types of proxies, download a Tiktok video manually or automatically, check the newest updates on Discord and Github.
 
 # About the Project
 
