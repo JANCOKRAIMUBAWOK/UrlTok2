@@ -101,6 +101,7 @@ namespace UrlTok_Fixed
                     foreach (string url in Vars.cleanedTikTokUrls.ToList())
                     {
                         Vars.qCounter++;
+                        Vars.boolLogTxt = "true";
                         Downloader(url, Vars.qCounter);
                     }
                 }
@@ -133,15 +134,23 @@ namespace UrlTok_Fixed
                 }
                 catch (Exception ex)
                 {
-                    Vars.Errors++;
+                    Vars.boolLogTxt = "false";
                     string error = ex.ToString();
                     if (error.Contains("403"))
                     {
                         Console.WriteLine("[!] Error 403 Forbidden, retrying this request.");
+                        Console.WriteWithGradient(Interface.versionBars.bars, Color.Aqua, Color.HotPink, 100);
 
                         // Adding back to begin of list!!
                         Vars.cleanedTikTokUrls.Insert(0, downloadurl);
-                        Downloader(downloadurl, queueNumber);
+                        return;
+                    }
+                    else if (error.Contains("404"))
+                    {
+                        Console.WriteLine("[!] Error 404 Not found, skipping this request.");
+                        Console.WriteWithGradient(Interface.versionBars.bars, Color.Aqua, Color.HotPink, 100);
+                        Vars.cleanedTikTokUrls.Remove(downloadurl);
+                        return; // Skipping this url
                     }
                     else
                     {
@@ -220,11 +229,18 @@ namespace UrlTok_Fixed
 
                 if (Vars.boolNewDir == "true")
                 {
-                    wc.DownloadFile(dlurl, fileName);
+                    try
+                    {
+                        wc.DownloadFile(dlurl, fileName);
+                    }
+                    catch { return; }
                 }
                 else
                 {
-                    wc.DownloadFile(dlurl, AppDomain.CurrentDomain.BaseDirectory + $"\\Automatically\\{Vars.dirDate}\\{Vars.authorID}-{Vars.userID}.mp4");
+                    try { 
+                        wc.DownloadFile(dlurl, AppDomain.CurrentDomain.BaseDirectory + $"\\Automatically\\{Vars.dirDate}\\{Vars.authorID}-{Vars.userID}.mp4"); 
+                    }
+                    catch { return; }
                 }
 
                 wc.Dispose();
