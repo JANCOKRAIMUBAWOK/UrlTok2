@@ -138,10 +138,19 @@ namespace UrlTok_Fixed
                     if (error.Contains("403"))
                     {
                         Console.WriteLine("[!] Error 403 Forbidden, retrying this request.");
+                        Console.WriteWithGradient(Interface.versionBars.bars, Color.Aqua, Color.HotPink, 100);
 
                         // Adding back to begin of list!!
                         Vars.cleanedTikTokUrls.Insert(0, downloadurl);
                         Downloader(downloadurl, queueNumber);
+                    }
+                    else if (error.Contains("404"))
+                    {
+                        Console.WriteLine("[!] Error 404 Not found, skipping this request.");
+                        Console.WriteWithGradient(Interface.versionBars.bars, Color.Aqua, Color.HotPink, 100);
+                        Vars.cleanedTikTokUrls.Remove(downloadurl);
+                        return; // Skipping this url
+                        
                     }
                     else
                     {

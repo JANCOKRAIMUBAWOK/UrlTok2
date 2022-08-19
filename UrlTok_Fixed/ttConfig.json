@@ -1,0 +1,6 @@
+{
+  "directory_create": "true",
+  "show_stats": "true",
+  "save_raw": "true",
+  "proxies": "Socks4"
+}
