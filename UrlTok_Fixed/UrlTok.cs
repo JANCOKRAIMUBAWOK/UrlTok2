@@ -41,6 +41,8 @@ namespace UrlTok_Fixed
             public static int ADM = 0;
             public static int Errors = 0;
             public static int Aux_ADM = 0;
+            public static int totalProgress = Vars.cleanedTikTokUrls.Count<string>();
+            public static int removedDue404 = 0;
         }
 
         public static void DPM_Calculator()
@@ -61,7 +63,7 @@ namespace UrlTok_Fixed
                     });
                     Vars.Aux_ADM = 0;
                     Vars.ADM = 0;
-                    Thread.Sleep(1000);
+                    Thread.Sleep(10000);
                 }
             });
         }
@@ -115,7 +117,7 @@ namespace UrlTok_Fixed
             {
                 hr.AllowAutoRedirect = false;
                 hr.Proxy = null;
-                hr.UserAgentRandomize(); // Avoids status code 403
+                hr.AddHeader("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36"); // Avoids status code 403
 
                 string payLoad = string.Concat(new string[]
                 {
@@ -142,11 +144,14 @@ namespace UrlTok_Fixed
                         Console.WriteWithGradient(Interface.versionBars.bars, Color.Aqua, Color.HotPink, 100);
 
                         // Adding back to begin of list!!
+                        Vars.Errors++;
                         Vars.cleanedTikTokUrls.Insert(0, downloadurl);
                         return;
                     }
                     else if (error.Contains("404"))
                     {
+                        Vars.Errors++;
+                        Vars.removedDue404++;
                         Console.WriteLine("[!] Error 404 Not found, skipping this request.");
                         Console.WriteWithGradient(Interface.versionBars.bars, Color.Aqua, Color.HotPink, 100);
                         Vars.cleanedTikTokUrls.Remove(downloadurl);
@@ -246,11 +251,12 @@ namespace UrlTok_Fixed
                 wc.Dispose();
                 Interlocked.Increment(ref Vars.progressCount);
                 Interlocked.Increment(ref Vars.ADM);
-                Console.WriteLine($"Finished downloading Token: {token}!\nProgress: {Vars.progressCount}/{Vars.cleanedTikTokUrls.Count<string>()}");
+                Vars.totalProgress = Vars.cleanedTikTokUrls.Count<string>();
+                Console.WriteLine($"Finished downloading Token: {token}!\nProgress: {Vars.progressCount}/{Vars.totalProgress}");
                 Console.WriteWithGradient(Interface.versionBars.bars, Color.Aqua, Color.HotPink, 100);
                 if (Vars.progressCount == Vars.cleanedTikTokUrls.Count<string>())
                 {
-                    Console.WriteLine($"Finished downloading ({Vars.cleanedTikTokUrls.Count<string>()}) all videos!");
+                    Console.WriteLine($"Finished downloading ({Vars.cleanedTikTokUrls.Count<string>()}) all videos!\nFailed to download {Vars.removedDue404} videos due to Deletion/Visibility (not Urltok's problem!)");
                 }
                 return;
             }
