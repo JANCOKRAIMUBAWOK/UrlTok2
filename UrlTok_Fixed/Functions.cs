@@ -18,7 +18,7 @@ namespace UrlTok_Fixed
             ConsoleKey keyInfo;
 
             Console.WriteLine("Make sure to join the Discord server for help/inquiries and updates.");
-            Console.WriteLine("Either press \"D\" on your keyboard or copy paste this url 'https://discord.gg/S2G6QkZRqM'");
+            Console.WriteLine("Either press \"D\" on your keyboard or copy paste this url 'https://discord.gg/b3w8f6M5XK'");
             Console.WriteWithGradient(Interface.versionBars.bars, Color.Aqua, Color.HotPink, 100);
 
             do
@@ -28,7 +28,7 @@ namespace UrlTok_Fixed
                 switch (keyInfo)
                 {
                     case ConsoleKey.D:
-                        System.Diagnostics.Process.Start("https://discord.gg/S2G6QkZRqM");
+                        System.Diagnostics.Process.Start("https://discord.gg/b3w8f6M5XK");
                         break;
 
                     case ConsoleKey.Escape:
