@@ -4,7 +4,7 @@ using System.IO;
 using Console = Colorful.Console;
 
 namespace UrlTok_Fixed
-{
+{   
     internal class Config
     {
         public static void createConfig()

@@ -157,6 +157,14 @@ namespace UrlTok_Fixed
                         Vars.cleanedTikTokUrls.Remove(downloadurl);
                         return; // Skipping this url
                     }
+                    else if (error.Contains("404"))
+                    {
+                        Console.WriteLine("[!] Error 404 Not found, skipping this request.");
+                        Console.WriteWithGradient(Interface.versionBars.bars, Color.Aqua, Color.HotPink, 100);
+                        Vars.cleanedTikTokUrls.Remove(downloadurl);
+                        return; // Skipping this url
+                        
+                    }
                     else
                     {
                         Console.WriteLine(ex.ToString());
