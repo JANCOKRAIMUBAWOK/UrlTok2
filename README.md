@@ -2,6 +2,9 @@
 
 With the help of the brand UrlTok version you can easily, configurate your personal preferences, scrape three types of proxies, download a Tiktok video manually or automatically, check the newest updates on Discord and Github.
 
+Preview:
+[Imgur](https://imgur.com/RxeqQPR)
+
 # About the Project
 
 I have made a few earlier versions of UrlTok thanks to the demand of updates, after a lot of debugging and writing new functions Urltok has finally become a stable mass-converter.
