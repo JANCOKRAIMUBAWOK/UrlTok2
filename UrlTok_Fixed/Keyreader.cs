@@ -17,42 +17,42 @@ namespace UrlTok_Fixed
                     case ConsoleKey.D1:
                         Console.Clear();
                         Interface.Menu();
-                        Console.Title = "UrlTok - Viewing Config - v2.0.0";
+                        Console.Title = "UrlTok - Viewing Config - v2.0.2";
                         Config.createConfig();
                         break;
 
                     case ConsoleKey.D2:
                         Console.Clear();
                         Interface.Menu();
-                        Console.Title = "UrlTok - Scraping Proxies - v2.0.0";
+                        Console.Title = "UrlTok - Scraping Proxies - v2.0.2";
                         Functions.ProxyScraper();
                         break;
 
                     case ConsoleKey.D3:
                         Console.Clear();
                         Interface.Menu();
-                        Console.Title = "UrlTok - Downloading Manually- v2.0.0";
+                        Console.Title = "UrlTok - Downloading Manually- v2.0.2";
                         Functions.downloadManually();
                         break;
 
                     case ConsoleKey.D4:
                         Console.Clear();
                         Interface.Menu();
-                        Console.Title = "UrlTok - Downloading Automatically - v2.0.0";
+                        Console.Title = "UrlTok - Downloading Automatically - v2.0.2";
                         UrlTok.Loader();
                         break;
 
                     case ConsoleKey.D5:
                         Console.Clear();
                         Interface.Menu();
-                        Console.Title = "UrlTok - Discord Invite - v2.0.0";
+                        Console.Title = "UrlTok - Discord Invite - v2.0.2";
                         Functions.Discord();
                         break;
 
                     case ConsoleKey.D6:
                         Console.Clear();
                         Interface.Menu();
-                        Console.Title = "UrlTok - Github Repository - v2.0.0";
+                        Console.Title = "UrlTok - Github Repository - v2.0.2";
                         Functions.Github();
                         break;
 
