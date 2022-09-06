@@ -20,14 +20,14 @@ namespace UrlTok_Fixed
 
         public static class versionBars
         {
-            public static string version = "> v2.0.2";
+            public static string version = "> 2.0.3";
             public static string githubUrl = "> Github.com/Sat178";
             public static string bars = "========================================================================================================================";
         }
 
         public static void Menu()
         {
-            Console.Title = "UrlTok - Main Menu - v2.0.2";
+            Console.Title = "UrlTok - Main Menu - v2.0.3";
             Console.WriteWithGradient(menuStrings.firstLine, Color.Aqua, Color.HotPink, 5);
             Console.WriteWithGradient(menuStrings.secondLine, Color.Aqua, Color.HotPink, 5);
             Console.WriteWithGradient(menuStrings.thirdLine, Color.Aqua, Color.HotPink, 5);
