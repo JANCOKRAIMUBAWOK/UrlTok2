@@ -12,6 +12,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Console = Colorful.Console;
+using Newtonsoft.Json.Serialization;
 
 namespace UrlTok_Fixed
 {
@@ -54,20 +55,42 @@ namespace UrlTok_Fixed
 
                 while (true)
                 {
-                    Console.Title = string.Format("UrlTok - Downloaded: {0}/{1} - Errors: {2} - Average downloads per minute: {3}", new object[]
+                    Console.Title = string.Format("UrlTok - Downloaded: {0}/{1} - Errors: {2}", new object[]
                     {
                         Vars.progressCount,
                         Vars.cleanedTikTokUrls.Count<String>(),
                         Vars.Errors,
-                        Vars.Aux_ADM= Vars.ADM * 60,
                     });
-                    Vars.Aux_ADM = 0;
-                    Vars.ADM = 0;
-                    Thread.Sleep(10000);
+                    Thread.Sleep(1);
                 }
             });
         }
 
+        sealed class defConfig
+        {
+            public string directory_create { get; set; }
+            public string show_stats { get; set; }
+            public string save_raw { get; set; }
+            public string proxies { get; set; }
+        }
+        public static void configCreate()
+        {
+            if (!File.Exists("ttConfig.json"))
+            {
+                var newConfig = File.Create("ttConfig.json");
+                newConfig.Close();
+                defConfig DefConfig = new defConfig
+                {
+                    directory_create = "false",
+                    show_stats = "false",
+                    save_raw = "true",
+                    proxies = "Socks4"
+
+                };
+
+                File.WriteAllText("ttConfig.json", JsonConvert.SerializeObject(DefConfig));
+            }
+        }
         public static void Loader()
         {
             DPM_Calculator();
