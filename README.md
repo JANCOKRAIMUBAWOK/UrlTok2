@@ -53,6 +53,10 @@ Option 5 + 6:
 - A function to check the Github repository and the Discord Support servers.
 - *Don't have Discord? You can always open an issue on Github.*
 
+# To do list
+- Adding multiple api's
+- Adding more quality options
+
 # Contributing
 
 Any form of contribution is greatly welcome, for major changes please open an issue first to discuss what you would like to change.
