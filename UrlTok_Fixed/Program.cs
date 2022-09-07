@@ -7,6 +7,7 @@ namespace UrlTok_Fixed
         [STAThread]
         private static void Main(string[] args)
         {
+            UrlTok.CheckVersion();
             UrlTok.configCreate();
             Interface.Menu();
             Interface.Options();

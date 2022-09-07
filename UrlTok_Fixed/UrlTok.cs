@@ -73,6 +73,24 @@ namespace UrlTok_Fixed
             public string save_raw { get; set; }
             public string proxies { get; set; }
         }
+
+        public static void CheckVersion()
+        {
+            WebClient wc = new WebClient();
+            var currVesion = wc.DownloadString("https://raw.githubusercontent.com/Sat178/UrlTok2/master/Version.txt").ToString();
+
+            if (currVesion.Trim() == Interface.versionBars.version)
+            {
+                // ?
+            } 
+            else
+            {
+                Console.WriteLine($"Outdated version! {Interface.versionBars.version}\nDownload the newest version: {currVesion}");
+                Console.WriteLine($"Press any key to continue!");
+                Console.ReadKey();
+                Console.Clear();
+            }
+        }
         public static void configCreate()
         {
             if (!File.Exists("ttConfig.json"))

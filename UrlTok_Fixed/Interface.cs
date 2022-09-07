@@ -20,7 +20,7 @@ namespace UrlTok_Fixed
 
         public static class versionBars
         {
-            public static string version = "> 2.0.3";
+            public static string version = "2.0.3";
             public static string githubUrl = "> Github.com/Sat178";
             public static string bars = "========================================================================================================================";
         }
@@ -37,7 +37,7 @@ namespace UrlTok_Fixed
             Console.WriteWithGradient(menuStrings.seventhLine, Color.Aqua, Color.HotPink, 5);
             Console.WriteWithGradient(menuStrings.eigthLine, Color.Aqua, Color.HotPink, 5);
             Console.WriteWithGradient(menuStrings.ninethLine, Color.Aqua, Color.HotPink, 5);
-            Console.WriteLine(versionBars.version, Color.Aqua);
+            Console.WriteLine("> v" + versionBars.version, Color.Aqua);
             Console.WriteLine(versionBars.githubUrl, Color.Pink);
             Console.WriteWithGradient(versionBars.bars, Color.Aqua, Color.HotPink, 100);
         }
